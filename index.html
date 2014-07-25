@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Polymer App</title>
+    <meta name="viewport"
+          content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <script src="./bower_components/platform/platform.js"></script>
+    <link rel="import" href="./bower_components/font-roboto/roboto.html">
+    <link rel="import" href="./bower_components/core-elements/core-elements.html">
+    <link rel="import" href="./bower_components/paper-elements/paper-elements.html">
+    <link rel="import"
+          href="./bower_components/core-header-panel/core-header-panel.html">
+    <link rel="import"
+          href="./bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import"
+          href="./bower_components/paper-tabs/paper-tabs.html">
+    <style>
+        .pink paper-tab::shadow #ink {
+        color: #ff4081;
+        }
+        paper-tabs.pink::shadow #selectionBar {
+        background-color: #ff4081;
+        }
+    </style>
+</head>
+<body unresolved touch-action="auto">
+<core-header-panel>
+
+    <core-toolbar>
+        <paper-tabs selected="0">
+
+            <paper-tab>TAB 1</paper-tab>
+            <paper-tab>TAB 2</paper-tab>
+            <paper-tab>TAB 3</paper-tab>
+        </paper-tabs>
+    </core-toolbar>
+
+    <!-- main page content will go here -->
+
+</core-header-panel>
+
+<p>Test test</p>
+</body>
