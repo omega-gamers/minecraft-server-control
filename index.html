@@ -15,6 +15,12 @@
     <link rel="import"
           href="./bower_components/paper-tabs/paper-tabs.html">
     <style>
+        html,body {
+        height: 100%;
+        margin: 0;
+        background-color: #E5E5E5;
+        font-family: 'RobotoDraft', sans-serif;
+        }
         core-header-panel {
         height: 100%;
         overflow: auto;
@@ -49,5 +55,12 @@
 
 </core-header-panel>
 
+<script>
+    var tabs = document.querySelector('paper-tabs');
+    tabs.addEventListener('core-select', function(e) {
+      console.log("tab change: " + e.target.getAttribute('name') +" selected = " + e.detail.isSelected);
+      console.log("Selected: " + tabs.selected);
+    });
+  </script>
 
 </body>
