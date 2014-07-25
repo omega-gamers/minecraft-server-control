@@ -58,9 +58,9 @@
 <core-header-panel>
 
     <core-toolbar>
-        <paper-tabs id="tabs" valueattr="name" selected="all" self-end>
-            <paper-tab name="all">ALL</paper-tab>
-            <paper-tab name="favorites">FAVORITES</paper-tab>
+        <paper-tabs id="tabs" valueattr="name" selected="red" self-end>
+            <paper-tab name="red">RED</paper-tab>
+            <paper-tab name="green">GREEN</paper-tab>
         </paper-tabs>
     </core-toolbar>
 
@@ -78,8 +78,16 @@
 <script>
     var tabs = document.querySelector('paper-tabs');
     tabs.addEventListener('core-select', function(e) {
-      console.log("tab change: " + e.target.getAttribute('name') +" selected = " + e.detail.isSelected);
-      console.log("Selected: " + tabs.selected);
+      children = e.target.children;
+      sel = null;
+      for (i = 0; i < children.length; i++){
+        if (children[i].name === tabs.selected){
+            sel = children[i];
+            break; //leave the loop
+        }
+      }
+      if (e.detail.isSelected())
+        console.log("Selected: " + tabs.selected);
     });
   </script>
 
