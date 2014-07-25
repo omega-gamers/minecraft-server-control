@@ -3,9 +3,7 @@
 
 <head>
     <title>Polymer App</title>
-    <meta name="viewport"
-          content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <script src="./bower_components/platform/platform.js"></script>
     <link rel="import" href="./bower_components/font-roboto/roboto.html">
     <link rel="import"
@@ -15,7 +13,6 @@
     <link rel="import"
           href="./bower_components/paper-tabs/paper-tabs.html">
     <link rel="import" href="post-list.html">
-    <!-- IMPORTANT html,body style block must be present for polymer to work -->
     <style>
         html,body {
         height: 100%;
@@ -46,7 +43,7 @@
         }
         @media (min-width: 481px) {
         #tabs {
-        width: 100%;
+        width: 200px;
         }
         .container {
         width: 400px;
@@ -54,29 +51,27 @@
         }
     </style>
 </head>
+
 <body unresolved touch-action="auto">
 <core-header-panel>
-
     <core-toolbar>
-        <paper-tabs id="tabs" valueattr="name" selected="red" self-end>
-            <paper-tab name="red">RED</paper-tab>
-            <paper-tab name="green">GREEN</paper-tab>
+        <paper-tabs id="tabs" selected="all" self-end>
+            <paper-tab name="all">ALL</paper-tab>
+            <paper-tab name="favorites">FAVORITES</paper-tab>
         </paper-tabs>
     </core-toolbar>
 
-    <!-- main page content will go here -->
     <div class="container" layout vertical center>
         <post-list show="all"></post-list>
     </div>
-
 </core-header-panel>
 
 <script>
     var tabs = document.querySelector('paper-tabs');
-    tabs.addEventListener('core-select', function(e) {
-      if (e.detail.isSelected)
+    tabs.addEventListener('core-select', function() {
       console.log("Selected: " + tabs.selected);
     });
   </script>
-
 </body>
+
+</html>
