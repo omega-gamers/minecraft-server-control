@@ -2,6 +2,23 @@
 <html>
 
 <head>
-	<script src="../bower_components/platform/platform.js"></script>
-	<link rel="import" href="components/core-elements/core-elements.html">
-	<link rel="import" href="components/paper-elements/paper-elements.html">
+    <script src="../bower_components/platform/platform.js"></script>
+    <link rel="import" href="components/core-elements/core-elements.html">
+    <link rel="import" href="components/paper-elements/paper-elements.html">
+    <style>
+        .pink paper-tab::shadow #ink {
+        color: #ff4081;
+        }
+        paper-tabs.pink::shadow #selectionBar {
+        background-color: #ff4081;
+        }
+    </style>
+</head>
+<body>
+<paper-tabs selected="0">
+    <paper-tab>TAB 1</paper-tab>
+    <paper-tab>TAB 2</paper-tab>
+    <paper-tab>TAB 3</paper-tab>
+</paper-tabs>
+<p>Test test</p>
+</body>
