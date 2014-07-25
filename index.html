@@ -14,7 +14,7 @@
           href="./bower_components/core-toolbar/core-toolbar.html">
     <link rel="import"
           href="./bower_components/paper-tabs/paper-tabs.html">
-    <link rel="import" href="content-card.html">
+    <link rel="import" href="post-list.html">
     <!-- IMPORTANT html,body style block must be present for polymer to work -->
     <style>
         html,body {
@@ -66,11 +66,7 @@
 
     <!-- main page content will go here -->
     <div class="container" layout vertical center>
-        <content-card>
-            <img src="./assets/imgs/redSquare.png">
-            <h2>A. Developer</h2>
-            <p>Something really profound about code.</p>
-        </content-card>
+        <post-list show="all"></post-list>
     </div>
 
 </core-header-panel>
@@ -78,16 +74,8 @@
 <script>
     var tabs = document.querySelector('paper-tabs');
     tabs.addEventListener('core-select', function(e) {
-      children = e.target.children;
-      sel = null;
-      for (i = 0; i < children.length; i++){
-        if (children[i].name === tabs.selected){
-            sel = children[i];
-            break; //leave the loop
-        }
-      }
-      if (e.detail.isSelected)
-        console.log("Selected: " + tabs.selected);
+
+      console.log("Selected: " + tabs.selected);
     });
   </script>
 
