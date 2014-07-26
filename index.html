@@ -62,13 +62,13 @@
     </core-toolbar>
 
     <div class="container" layout vertical center>
-        <post-list color="greenCircle.png"></post-list>
+        <content-wrapper color="greenCircle.png"></content-wrapper>
     </div>
 </core-header-panel>
 
 <script>
     var tabs = document.querySelector('paper-tabs');
-    var card = document.querySelector('post-list');
+    var card = document.querySelector('content-wrapper');
     tabs.addEventListener('core-select', function(e) {
       if (e.detail.isSelected) {
         console.log("Selected: " + tabs.selected);
