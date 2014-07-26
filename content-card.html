@@ -1,5 +1,6 @@
 <link rel="import" href="./bower_components/polymer/polymer.html">
 <link rel="import" href="./bower_components/core-icon-button/core-icon-button.html">
+<link rel="import" href="./bower_components/paper-fab/paper-fab.html">
 
 <polymer-element name="content-card">
     <template>
@@ -28,12 +29,26 @@
             border-radius: 50%;
             margin: 10px;
             }
+            #mButton{
+                background: #111122;
+            }
+            #mButton:hover {
+                background: #2a56c6;
+            }
+            #mButton::shadow #ripple {
+                color: #2a56c6;
+            }
+
         </style>
         <div class="card-header" layout horizontal center>
             <content select="img"></content>
             <content select="h2"></content>
         </div>
-        <content></content>
+        <div class="options" layout horizontal right>
+            <content></content>
+            <paper-fab label="mButton" class="mini"></paper-fab>
+        </div>
+
     </template>
     <script>
         Polymer({});

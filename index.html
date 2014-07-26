@@ -43,12 +43,9 @@
         margin: 50px auto;
         }
         @media (min-width: 481px) {
-        #tabs {
-        width: 100%;
-        }
-        .container {
-        width: 400px;
-        }
+            #tabs {
+            width: 100%;
+            }
         }
     </style>
 </head>
@@ -61,13 +58,8 @@
             <paper-tab name="red">RED</paper-tab>
         </paper-tabs>
     </core-toolbar>
-    <div class="box" layout horizontal center>
-        <div class="container" layout vertical center>
-            <content-wrapper color="greenCircle.png"></content-wrapper>
-        </div>
-        <div class="container" layout vertical center>
-            <post-list show="all"></post-list>
-        </div>
+    <div class="container" layout vertical center>
+        <content-wrapper color="greenCircle.png"></content-wrapper>
     </div>
 
 </core-header-panel>
