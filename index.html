@@ -69,7 +69,7 @@
 <script>
     var tabs = document.querySelector('paper-tabs');
     var card = document.querySelector('post-list');
-    tabs.addEventListener('core-select', function() {
+    tabs.addEventListener('core-select', function(e) {
       if (e.detail.isSelected) {
         console.log("Selected: " + tabs.selected);
         color = '';
