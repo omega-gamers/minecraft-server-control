@@ -72,11 +72,10 @@
     tabs.addEventListener('core-select', function(e) {
       if (e.detail.isSelected) {
         console.log("Selected: " + tabs.selected);
-        color = '';
         if (tabs.selected === 'green')
-            color = 'greenCircle.png';
+            card.color = 'greenCircle.png';
         else
-            color = 'redCircle.png';
+            card.color = 'redCircle.png';
       }
     });
   </script>
