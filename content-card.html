@@ -3,7 +3,7 @@
 <link rel="import" href="./bower_components/paper-fab/paper-fab.html">
 <link rel="import" href="./bower_components/core-icons/core-icons.html">
 
-<polymer-element name="content-card">
+<polymer-element name="content-card" attributes="show">
     <template>
         <style type="text/css">
             :host {
@@ -30,9 +30,26 @@
             border-radius: 50%;
             margin: 10px;
             }
-            paper-fab {
-                background: #00CC00;
+            polyfill-next-selector { content: '.card-header paper-fab'; }
+            .card-header ::content paper-fab {
+            background: #00EE00;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin: 10px;
+            }
+            polyfill-next-selector { content: '.card-header paper-fab:hover'; }
+            .card-header ::content paper-fab:hover {
+            background: #00FF00;
+            }
+            polyfill-next-selector { content: '.card-header paper-fab:shadow #ripple'; }
+            .card-header ::content paper-fab:shadow #ripple {
+            color: #00AA00;
+            }
+            #mButton {
+                background: #00EE00;
                 width: 70px;
+                height: 70px;
                 border-radius: 50%;
                 margin: 10px;
             }
@@ -48,12 +65,13 @@
 
         </style>
         <div class="card-header" layout horizontal center>
-            <paper-fab id="mButton" icon="settings-power"></paper-fab>
+            <content select="paper-fab"></content>
+            <content select="img"></content>
             <content select="h2"></content>
         </div>
-        <div class="options" layout horizontal right>
+        <div class="options" layout vertical right>
             <content></content>
-
+            <content></content>
         </div>
 
     </template>
