@@ -2,7 +2,7 @@
 <link rel="import" href="post-service.html">
 <link rel="import" href="content-card.html">
 
-<polymer-element name="post-list" attributes="color">
+<polymer-element name="content-wrapper" attributes="color">
     <template>
         <style>
             :host {
@@ -27,7 +27,7 @@
         </div>
     </template>
     <script>
-  Polymer('post-list', {
+  Polymer('content-wrapper', {
     attributeChanged: function(attrName, oldVal, newVal) {
     //var newVal = this.getAttribute(attrName);
     console.log(attrName, 'old: ' + oldVal, 'new:', newVal);
