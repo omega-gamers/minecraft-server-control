@@ -3,7 +3,7 @@
 <link rel="import" href="./bower_components/paper-fab/paper-fab.html">
 <link rel="import" href="./bower_components/core-icons/core-icons.html">
 
-<polymer-element name="content-card">
+<polymer-element name="content-card" attributes="button">
     <template>
         <style type="text/css">
             :host {
@@ -37,7 +37,6 @@
             height: 70px;
             border-radius: 50%;
             margin: 10px;
-            icon: "settings-power";
             }
             polyfill-next-selector { content: '.card-header paper-fab:hover'; }
             .card-header ::content paper-fab:hover {
@@ -66,7 +65,7 @@
 
         </style>
         <div class="card-header" layout horizontal center>
-            <content select="paper-fab"></content>
+            <paper-fab hidden?="{{button != 'true'}}" id="mButton" icon="settings-power"></paper-fab>
             <content select="img"></content>
             <content select="h2"></content>
         </div>
