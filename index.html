@@ -58,18 +58,19 @@
         </paper-tabs>
     </core-toolbar>
     <div class="container" layout vertical center>
-        <server-info show="yes" color="red" img="./assets/imgs/greenCircle.png"></server-info>
+        <server-info show="info" color="red" img="./assets/imgs/greenCircle.png"></server-info>
     </div>
 
 </core-header-panel>
 
 <script>
     var tabs = document.querySelector('paper-tabs');
-    var card = document.querySelector('content-wrapper');
+    var card = document.querySelector('server-info');
     tabs.addEventListener('core-select', function(e) {
       if (e.detail.isSelected) {
         console.log("Selected: " + tabs.selected);
-        //if (tabs.selected === 'green')
+        card.show = tabs.selected;
+        //if (tabs.selected === '')
             //card.color = 'greenCircle.png';
         //else
             //card.color = 'redCircle.png';
