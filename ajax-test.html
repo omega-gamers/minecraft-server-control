@@ -23,20 +23,14 @@
         </core-ajax>
     </template>
     <script>
-    console.log("Test message from shadow dom");
   Polymer('ajax-test', {
     created: function() {
-      console.log("Created ajax-test");
       this.posts = [];
-      var ajax = document.querySelector('core-ajax');
-      ajax.go(); //Hopefully launches the ajax request
     },
     postsLoaded: function() {
       // Make a copy of the loaded data
       this.posts = this.$.ajax.response.slice(0);
-      console.log('Message received');
-      for (i = 0; i < this.posts.length; i++)
-        console.log('Ret Val: ' + this.posts[i]);
+      console.log('Message received: '+this.posts);
     },
     response: function() {
         console.log('An error occurred in the AJAX request');
