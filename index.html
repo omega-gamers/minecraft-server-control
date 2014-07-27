@@ -12,8 +12,7 @@
           href="./bower_components/core-toolbar/core-toolbar.html">
     <link rel="import"
           href="./bower_components/paper-tabs/paper-tabs.html">
-    <link rel="import" href="server-info.html">
-    <link rel="import" href="post-list.html">
+    <link rel="import" href="content-card.html">
     <style>
         html,body {
         height: 100%;
@@ -54,12 +53,16 @@
 <core-header-panel>
     <core-toolbar>
         <paper-tabs id="tabs" selected="green" self-end>
-            <paper-tab name="green">GREEN</paper-tab>
-            <paper-tab name="red">RED</paper-tab>
+            <paper-tab name="green">Info</paper-tab>
+            <paper-tab name="red">Admin</paper-tab>
         </paper-tabs>
     </core-toolbar>
     <div class="container" layout vertical center>
-        <server-info show="yes"></server-info>
+        <content-card show="yes">
+		<img src="./assets/imgs/greenCircle.png" width=70 height=70>
+		<h2>Server Info</h2>
+		<p>Server Stuff</p>
+	</content-card>
     </div>
 
 </core-header-panel>
