@@ -4,7 +4,7 @@
 <link rel="import" href="./bower_components/paper-fab/paper-fab.html">
 <link rel="import" href="./bower_components/core-icons/core-icons.html">
 
-<polymer-element name="content-wrapper" attributes="color img show">
+<polymer-element name="server-info" attributes="color img show">
     <template>
         <style>
             :host {
@@ -33,7 +33,7 @@
         </div>
     </template>
     <script>
-  Polymer('content-wrapper', {
+  Polymer('server-info', {
     attributeChanged: function(attrName, oldVal, newVal) {
     //var newVal = this.getAttribute(attrName);
     console.log(attrName, 'old: ' + oldVal, 'new:', newVal);
