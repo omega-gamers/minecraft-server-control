@@ -18,6 +18,7 @@
                    method="GET"
                    url="./testing/test-perl.pl"
                    on-core-response="{{postsLoaded}}"
+                   on-core-error="{{response}}"
                    handleAs="json">
         </core-ajax>
     </template>
@@ -25,6 +26,7 @@
   Polymer('post-service', {
     created: function() {
       this.posts = [];
+      ajax.$.go; //Hopefully launches the ajax request
     },
     postsLoaded: function() {
       // Make a copy of the loaded data
@@ -33,6 +35,9 @@
       for (i = 0; i < this.posts.length; i++)
         console.log('Ret Val: ' + this.posts[i]);
     },
+    response: function() {
+        console.log('An error occurred in the AJAX request');
+    }
     /** 
      * Update the service with the current favorite value.
      * (Two-way data binding updates the favorite value 
