@@ -30,22 +30,6 @@
             border-radius: 50%;
             margin: 10px;
             }
-            polyfill-next-selector { content: '.card-header paper-fab'; }
-            .card-header ::content paper-fab {
-            background: #00EE00;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            margin: 10px;
-            }
-            polyfill-next-selector { content: '.card-header paper-fab:hover'; }
-            .card-header ::content paper-fab:hover {
-            background: #00FF00;
-            }
-            polyfill-next-selector { content: '.card-header paper-fab:shadow #ripple'; }
-            .card-header ::content paper-fab:shadow #ripple {
-            color: #00AA00;
-            }
             #mButton {
                 background: #00EE00;
                 width: 70px;
@@ -61,6 +45,7 @@
             }
             core-icon[icon="settings-power"] {
                 fill:   #000
+                position: relative;
             }
 
         </style>
@@ -69,7 +54,7 @@
             <content select="img"></content>
             <content select="h2"></content>
         </div>
-        <div class="options" layout vertical right>
+        <div class="options" layout horizontal right>
             <content></content>
             <content></content>
         </div>
