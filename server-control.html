@@ -3,7 +3,7 @@
 <link rel="import" href="./bower_components/paper-fab/paper-fab.html">
 <link rel="import" href="./bower_components/core-icons/core-icons.html">
 
-<polymer-element name="content-card" attributes="button">
+<polymer-element name="content-card">
     <template>
         <style type="text/css">
             :host {
@@ -30,10 +30,10 @@
             border-radius: 50%;
             margin: 10px;
             }
-            #mButton {
+            paper-fab {
                 background: #00EE00;
-                //width: 70px;
-                //height: 70px;
+                width: 70px;
+                height: 70px;
                 border-radius: 50%;
                 margin: 10px;
             }
@@ -49,8 +49,7 @@
 
         </style>
         <div class="card-header" layout horizontal center>
-            <paper-fab hidden?="{{button != 'true'}}" id="mButton" icon="settings-power"></paper-fab>
-            <content select="img"></content>
+            <paper-fab id="mButton" icon="settings-power"></paper-fab>
             <content select="h2"></content>
         </div>
         <div class="options" layout vertical right>
