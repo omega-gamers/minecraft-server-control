@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Polymer App</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <script src="./bower_components/platform/platform.js"></script>
+    <link rel="import" href="./bower_components/font-roboto/roboto.html">
+    <link rel="import"
+          href="./bower_components/core-header-panel/core-header-panel.html">
+    <link rel="import"
+          href="./bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import"
+          href="./bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="server-info.html">
+
+    <style>
+        html,body {
+        height: 100%;
+        margin: 0;
+        background-color: #E5E5E5;
+        font-family: 'RobotoDraft', sans-serif;
+        }
+        core-header-panel {
+        height: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        }
+        core-toolbar {
+        background: #03a9f4;
+        color: white;
+        }
+        #tabs {
+        width: 100%;
+        margin: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        }
+        .container {
+        width: 70%;
+        margin: 50px auto;
+        }
+        @media (min-width: 481px) {
+            #tabs {
+            width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body unresolved touch-action="auto">
+<core-header-panel>
+    <core-toolbar>
+        <paper-tabs id="tabs" selected="info" self-end>
+            <paper-tab name="info">Info</paper-tab>
+            <paper-tab name="admin">Admin</paper-tab>
+        </paper-tabs>
+    </core-toolbar>
+    <div class="container" layout vertical center>
+        <server-info show="info" color="red" img="./assets/imgs/greenCircle.png"></server-info>
+    </div>
+
+</core-header-panel>
+
+<script>
+    var tabs = document.querySelector('paper-tabs');
+    var card = document.querySelector('server-info');
+    tabs.addEventListener('core-select', function(e) {
+      if (e.detail.isSelected) {
+        console.log("Selected: " + tabs.selected);
+        card.show = tabs.selected;
+        //if (tabs.selected === '')
+            //card.color = 'greenCircle.png';
+        //else
+            //card.color = 'redCircle.png';
+      }
+    });
+  </script>
+</body>
+
+</html>
